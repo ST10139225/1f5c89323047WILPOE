@@ -1,0 +1,123 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model KNN.Models.IndexViewModel
+ 
+
+<main class="container flex-grow-1">
+    <h1 class="mb-4">Admin Dashboard</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Total Posts</h5>
+                    <p class="card-text display-4"> *</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Comments</h5>
+                    <p class="card-text display-4">*</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+                    <p class="card-text display-4">*</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Podcast Episodes</h5>
+                    <p class="card-text display-4">2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-header">
+                   Podcast suggestions
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Exploring Creativity in fighing crime 
+                        <span class="badge bg-primary rounded-pill">New</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        The Future of AI in Education
+                        <span class="badge bg-secondary rounded-pill">3 days ago</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Sustainable Living: Small Changes, Big Impact
+                        <span class="badge bg-secondary rounded-pill">1 week ago</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    User Management
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role" required>
+                                <option value="user">User</option>
+                                <option value="moderator">Moderator</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Quick Actions
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="admin.html" class="btn btn-outline-primary">
+                            <i class="bi bi-pencil-square"></i> Manage Posts
+                        </a>
+                        <a href="#" class="btn btn-outline-success">
+                            <i class="bi bi-mic-fill"></i> New Podcast Episode
+                        </a>
+                        <a href="#" class="btn btn-outline-info">
+                            <i class="bi bi-people-fill"></i> Manage Users
+                        </a>
+                        <a href="#" class="btn btn-outline-warning">
+                            <i class="bi bi-gear-fill"></i> Site Settings
+                        </a>
+                        <a href="#" class="btn btn-outline-danger">
+                            <i class="bi bi-shield-fill"></i> Security Logs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

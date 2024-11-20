@@ -1,0 +1,42 @@
+﻿﻿@using Microsoft.AspNetCore.Identity
+@model KNN.Models.BlogPostVM
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    Layout = "_ReadLayout";
+    ViewData["HeaderImage"] = $"../../UserFiles/Blogs/{Model.Blog.Id}/HeaderImage.jpg";
+    ViewData["HeaderTitle"] = Model.Blog.Title;
+    ViewData["AuthorName"] = "Richard Tsoka";
+    ViewData["PostDate"] = Model.Blog.UpdatedOn.ToString();
+}
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                @Html.Raw(Model.Blog.Content)
+            </div>
+        </div>
+    </div>
+            <div class="row mt-5">
+            <div class="col-lg-8 col-md-10 mx-auto">
+            @if (Model?.Blog?.Posts == null)
+            {
+                <h4 class="mb-5">0 Comments</h4>
+
+            }
+            else
+            {
+                <h3 class="mb-5">@Model?.Blog?.Posts.Count() Comments</h3>
+
+            }
+
+            </div>
+
+            </div>
+
+
+                
+</article>

@@ -1,0 +1,23 @@
+﻿ @model KNN.Models.BlogPostVM
+ @using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@{
+    Layout = "_ReadLayout";
+    ViewData["HeaderImage"] = $"../../UserFiles/Posts/{Model.Blog.Id}/HeaderImage.jpg";
+    ViewData["HeaderTitle"] = Model.Blog.Title;
+    ViewData["AuthorName"] =   @User.Identity?.Name;
+    ViewData["PostDate"] = Model.Blog.UpdatedOn.ToString();
+}
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                @Html.Raw(Model.Blog.Content)
+            </div>
+        </div>
+    </div>
+</article>
